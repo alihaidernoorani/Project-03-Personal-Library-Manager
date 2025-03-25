@@ -68,16 +68,16 @@ def search_book():
         found = False
 
         if search_choice == 1:
-            search_title = input("Enter the title: ").strip().lower()
+            search_title = input("Enter the title: ")
             for i, book in enumerate(books):
-                if book["Title"].lower() == search_title:
+                if book["Title"].strip().lower() == search_title.strip().lower():
                     print(f"{i+1}. {book['Title']} by {book['Author']} ({book['Publication Year']}) - {book['Genre']} - {'Read' if book['Read Status'] else 'Not Read'}")
                     found = True
 
         elif search_choice == 2:
-            search_author = input("Enter the author: ").strip().lower()
+            search_author = input("Enter the author: ")
             for i, book in enumerate(books):
-                if book["Author"].lower() == search_author:
+                if book["Author"].strip().lower() == search_author.strip().lower():
                     print(f"{i+1}. {book['Title']} by {book['Author']} ({book['Publication Year']}) - {book['Genre']} - {'Read' if book['Read Status'] else 'Not Read'}")
                     found = True
 
